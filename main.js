@@ -17,13 +17,13 @@ function printWeatherData(data){
   }
 
   elCity.textContent = data.name
-  elIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+  elIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
   elStatus.textContent = data.weather[0].description
   elTemp.textContent = `${data.main.temp}ºC`
 }
 
 function getDataByLocating(la, lon){
-  const URL = `http://api.openweathermap.org/data/2.5/weather?lat=${la}&lon=${lon}&units=metric&appid=47ae1f9397984156de1427b9ab3c9c06`
+  const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${la}&lon=${lon}&units=metric&appid=47ae1f9397984156de1427b9ab3c9c06`
 
   fetch(URL).then(function(resp){
     return resp.json();
@@ -41,7 +41,7 @@ function failLocating(){
 }
 
 function getDataBySearching(city){
-  const URL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=47ae1f9397984156de1427b9ab3c9c06`
+  const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=47ae1f9397984156de1427b9ab3c9c06`
 
   fetch(URL).then(function(resp){
     return resp.json();
